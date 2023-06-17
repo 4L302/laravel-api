@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('title')->nullable(false)->unique();
             $table->text('description');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->unsignedBigInteger('type_id');
             $table->foreign('type_id')->references('id')->on('types');
             $table->timestamps();

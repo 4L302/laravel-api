@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name')->nullable(false)->unique();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

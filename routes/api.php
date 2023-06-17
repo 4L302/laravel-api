@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/projects', [ProjectController::class, 'index']);
 
-Route::get('/project/{slug}', [ProjectController::class, 'show']);
+Route::get('/projects/{slug}', [ProjectController::class, 'show']);

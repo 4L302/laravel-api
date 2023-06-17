@@ -9,8 +9,14 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['_token'];
+
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class);
     }
 }
